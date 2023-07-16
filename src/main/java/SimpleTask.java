@@ -1,4 +1,4 @@
-public class SimpleTask extends Task{
+public class SimpleTask extends Task {
     protected String title;
 
     @Override
@@ -13,6 +13,7 @@ public class SimpleTask extends Task{
         super(id);
         this.title = title;
     }
+
     public String getTitle() {
         return title;
     }

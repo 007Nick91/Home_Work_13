@@ -1,6 +1,8 @@
 import java.util.Objects;
+
 public class Task {
     protected int id;
+
     public boolean matches(String query) {
         return false;
     }
@@ -12,6 +14,7 @@ public class Task {
     public int getId() {
         return id;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

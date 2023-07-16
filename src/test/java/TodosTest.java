@@ -6,7 +6,7 @@ public class TodosTest {
     public void shouldAddThreeTasksOfDifferentType() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -22,15 +22,16 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic, meeting };
+        Task[] expected = {simpleTask, epic, meeting};
         Task[] actual = todos.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldAddThreeTasksOfDifferentTypeAgain() {
         SimpleTask simpleTask = new SimpleTask(5, "Открыть Дверь");
 
-        String[] subtasks = { "Дверь", "Окно", "Стол" };
+        String[] subtasks = {"Дверь", "Окно", "Стол"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -46,15 +47,16 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { simpleTask, epic };
+        Task[] expected = {simpleTask, epic};
         Task[] actual = todos.search("Дверь");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldAddThreeTasksOfDifferentTypeOne() {
         SimpleTask simpleTask = new SimpleTask(5, "Открыть Дверь");
 
-        String[] subtasks = { "Дверь", "Окно", "Стол" };
+        String[] subtasks = {"Дверь", "Окно", "Стол"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -70,15 +72,16 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = { epic };
+        Task[] expected = {epic};
         Task[] actual = todos.search("Окно");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void searchNothing() {
         SimpleTask simpleTask = new SimpleTask(5, "Открыть Дверь");
 
-        String[] subtasks = { "Дверь", "Окно", "Стол" };
+        String[] subtasks = {"Дверь", "Окно", "Стол"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -94,7 +97,7 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = {  };
+        Task[] expected = {};
         Task[] actual = todos.search("Ручка");
         Assertions.assertArrayEquals(expected, actual);
     }
